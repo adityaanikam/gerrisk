@@ -1,11 +1,16 @@
 # GeriRisk ML API — Python dependencies
 #
-# Pin minor versions for reproducibility; allow patch updates (~=).
-# These are intentionally kept minimal — no pandas or heavy viz libs needed.
+# IMPORTANT: Requires Python 3.12 (see .python-version).
+# These versions all ship pre-built binary wheels for Python 3.12 on PyPI,
+# so no Rust/C compiler is needed during deployment on Render.
+#
+# Python 3.14 is NOT supported: pydantic-core ~=2.9 and numpy ~=1.26
+# pre-date Python 3.14 and have no pre-built wheels for it, causing
+# "Read-only file system" Cargo build failures on Render's free tier.
 
 fastapi~=0.115.0
 uvicorn[standard]~=0.32.0    # [standard] pulls in httptools + uvloop for speed
 pydantic~=2.9.0
-scikit-learn~=1.5.0
-numpy~=1.26.0
-joblib~=1.4.0
+scikit-learn~=1.5.2
+numpy~=1.26.4
+joblib~=1.4.2

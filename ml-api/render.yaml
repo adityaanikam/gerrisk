@@ -34,6 +34,12 @@ services:
       - key: ALLOWED_ORIGIN
         value: "*"        # ← change to https://geririsk.vercel.app before going live
 
+      # Lock Python to 3.12 — pydantic-core and numpy 1.26 have no pre-built
+      # wheels for Python 3.14 (Render's current default), causing Rust/Cargo
+      # build failures. This mirrors the .python-version file as a failsafe.
+      - key: PYTHON_VERSION
+        value: "3.12.11"
+
       # Python behaviour
       - key: PYTHONUNBUFFERED
         value: "1"        # ensures logs appear in real-time in Render dashboard
