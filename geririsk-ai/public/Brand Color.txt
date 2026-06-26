@@ -1,2 +1,0 @@
-Primary Color: #0000c9
-Accent Color: #a8bcff

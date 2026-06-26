@@ -1,58 +1,151 @@
-# dependencies
-node_modules/
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+﻿# =============================================================================
+# GeriRisk — Python Machine Learning Project .gitignore
+# Following GitHub best practices for Python projects
+# =============================================================================
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# Python virtual environment
+# -----------------------------------------------------------------------------
+# Virtual Environments
+# -----------------------------------------------------------------------------
+geririsk-ai/
 venv/
-/Lib
-/Scripts
-/Include
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# -----------------------------------------------------------------------------
+# Python Cache & Compiled Files
+# -----------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
-.Python
-pyvenv.cfg
-pip-selfcheck.json
+*.pyc
+*.pyo
+*.pyd
 
-# IDE
+# -----------------------------------------------------------------------------
+# Jupyter Notebook Checkpoints
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# -----------------------------------------------------------------------------
+# Environment Variable Files
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------------------------------------------------------
+# IDE & Editor Folders
+# -----------------------------------------------------------------------------
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
 
-# Prompts
-Prompts/
+# -----------------------------------------------------------------------------
+# OS-Generated Files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+*.log
+logs/
+log/
+
+# -----------------------------------------------------------------------------
+# Build & Distribution Folders
+# -----------------------------------------------------------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+share/python-wheels/
+MANIFEST
+
+# -----------------------------------------------------------------------------
+# Pytest & Coverage
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+nosetests.xml
+test-results/
+
+# -----------------------------------------------------------------------------
+# Mypy & Type Checkers
+# -----------------------------------------------------------------------------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# -----------------------------------------------------------------------------
+# Temporary Files & SQLite Databases
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+
+# -----------------------------------------------------------------------------
+# Machine Learning Artifacts
+# -----------------------------------------------------------------------------
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.joblib
+models/
+checkpoints/
+runs/
+
+# -----------------------------------------------------------------------------
+# Data Files (large or sensitive)
+# -----------------------------------------------------------------------------
+data/raw/
+data/processed/
+
+# -----------------------------------------------------------------------------
+# Package Manager
+# -----------------------------------------------------------------------------
+pip-log.txt
+pip-delete-this-directory.txt
+
+# -----------------------------------------------------------------------------
+# Distribution / Packaging
+# -----------------------------------------------------------------------------
+*.so
+*.pyd
+lib/
+lib64/
+parts/
+sdist/
+var/
