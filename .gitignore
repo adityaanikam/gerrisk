@@ -143,8 +143,8 @@ pip-delete-this-directory.txt
 # -----------------------------------------------------------------------------
 *.so
 *.pyd
-lib/
-lib64/
+/lib/
+/lib64/
 parts/
 sdist/
 var/
