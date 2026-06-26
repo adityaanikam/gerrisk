@@ -1,0 +1,11 @@
+# GeriRisk ML API — Python dependencies
+#
+# Pin minor versions for reproducibility; allow patch updates (~=).
+# These are intentionally kept minimal — no pandas or heavy viz libs needed.
+
+fastapi~=0.115.0
+uvicorn[standard]~=0.32.0    # [standard] pulls in httptools + uvloop for speed
+pydantic~=2.9.0
+scikit-learn~=1.5.0
+numpy~=1.26.0
+joblib~=1.4.0

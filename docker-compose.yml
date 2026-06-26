@@ -1,0 +1,25 @@
+services:
+  geririsk-app:
+    build:
+      # Build context is the REPO ROOT so that:
+      #  - requirements.txt (root) is reachable
+      #  - geririsk-ai/ source is reachable via "COPY geririsk-ai/ ."
+      context: .
+      dockerfile: geririsk-ai/Dockerfile
+    image: geririsk-ai:latest
+    container_name: geririsk-app
+    ports:
+      - "3000:3000"
+    # Loads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
+    env_file:
+      - ./geririsk-ai/.env.local
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
