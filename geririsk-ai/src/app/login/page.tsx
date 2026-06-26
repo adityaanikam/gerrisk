@@ -17,7 +17,7 @@ const cardVariants = {
 
 const fieldVariants = (delay: number) => ({
   hidden:  { opacity: 0, x: -14 },
-  visible: { opacity: 1, x: 0, transition: { delay, duration: 0.38, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { delay, duration: 0.38, ease: "easeOut" as const } },
 });
 
 export default function LoginPage() {
