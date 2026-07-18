@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  // Must match turbopack.root — Next.js warns and picks one arbitrarily
+  // otherwise (it inferred /vercel/path0 on Vercel, diverging from this).
+  outputFileTracingRoot: projectRoot,
   // Required for Docker: emits a self-contained server.js + static assets
   // so the runner stage doesn't need the full node_modules tree.
   output: "standalone",

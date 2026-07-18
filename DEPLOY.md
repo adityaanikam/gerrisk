@@ -104,7 +104,7 @@ curl -X POST https://geririsk-ml-api.onrender.com/predict \
 | **Root Directory** | `geririsk-ai` |
 | **Build Command** | `npm run build` *(leave as default)* |
 | **Output Directory** | Leave blank *(Vercel detects Next.js output automatically)* |
-| **Node.js Version** | `20.x` |
+| **Node.js Version** | `24.x` |
 
 4. Under **Environment Variables**, add all three:
 
