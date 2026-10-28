@@ -97,6 +97,25 @@ at startup and kept in memory for the lifetime of the process.
 | `respiratory_risk_model.pkl` | Respiratory risk classifier |
 | `respiratory_scaler.pkl` | StandardScaler for respiratory features |
 
+All six were saved with **scikit-learn 1.6.1**, which `requirements.txt` pins
+exactly. Loading them under another release is not supported.
+
+### Retraining
+
+`train.py` retrains all three from `training_data/` and writes to
+`models_retrained/`, leaving the files above untouched.
+
+```bash
+pip install -r requirements-train.txt
+python train.py
+python -m pytest
+```
+
+The recovered split and settings, the measured metrics, and the finding that
+the labels are rule-derived are all in the "Model training" section of the
+[repository README](../README.md). Read that before quoting any number from
+these models.
+
 ---
 
 ## Environment variables
