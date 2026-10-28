@@ -11,6 +11,13 @@
 fastapi~=0.115.0
 uvicorn[standard]~=0.32.0    # [standard] pulls in httptools + uvloop for speed
 pydantic~=2.9.0
-scikit-learn~=1.5.2
+
+# Exact pin, not a range: every artefact in models/ carries
+# _sklearn_version == "1.6.1", and loading a pickle under a different
+# scikit-learn raises InconsistentVersionWarning with no guarantee that the
+# unpickled estimator still behaves the same. Bump this only together with
+# retrained artefacts (see train.py).
+scikit-learn==1.6.1
+
 numpy~=1.26.4
 joblib~=1.4.2
