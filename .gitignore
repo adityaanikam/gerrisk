@@ -126,6 +126,12 @@ models/
 checkpoints/
 runs/
 
+# MLflow file backend and retrained artefacts, both written by ml-api/train.py.
+# The artefacts in ml-api/models/ are committed and are force-added; these are not.
+mlruns/
+mlartifacts/
+ml-api/models_retrained/
+
 # -----------------------------------------------------------------------------
 # Data Files (large or sensitive)
 # -----------------------------------------------------------------------------
