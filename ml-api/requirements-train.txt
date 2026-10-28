@@ -1,4 +1,4 @@
-# GeriRisk ML API — training and test dependencies
+# GeriRisk ML API: training and test dependencies
 #
 # These are NOT needed to serve the API. Render installs requirements.txt only.
 # Install locally with:
